@@ -1,0 +1,7 @@
+{
+"aws_access_key": "AKIA3H33RTPCINMSOKXS",
+"aws_secret_key": "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",
+"ssh_username":"ubuntu",
+"vpc_id": "vpc-0cdc2fc7bba8ee92d",
+"subnet_id": "subnet-08e989c286f7f86cc"
+}

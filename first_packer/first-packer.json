@@ -1,0 +1,31 @@
+{
+    "variables": {
+        "aws_access_key": "",
+        "aws_secret_key": ""
+    },
+    "builders": [
+        {
+            "access_key": "{{user `aws_access_key`}}",
+            "secret_key": "{{user `aws_secret_key`}}",
+            "name": "ubuntu-18.04",
+            "type": "amazon-ebs",
+            "region": "me-south-1",
+            "vpc_id": "{{user `vpc_id`}}",
+            "subnet_id": "{{user `subnet_id`}}",
+            "associate_public_ip_address": true,
+            "source_ami": "ami-06fdc76efb53b5d44",
+            "instance_type": "t3.micro",
+            "ssh_username": "{{user `ssh_username`}}",
+            "ami_name": "packer-AMI {{timestamp}}",
+            "tags": {
+                "Name": "Nawaf-DevOps-packer -Apache Server- {{timestamp}}"
+            }
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "runServer.sh"
+        }
+    ]
+}
